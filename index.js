@@ -6,6 +6,8 @@ require('dotenv').config();
 const {v4: uuidv4} = require('uuid');
 app.use(cors());
 app.use(express.static('public'));
+app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 //Root endpoint
 app.get('/', (req, res) => {
